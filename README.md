@@ -34,7 +34,11 @@ mkdir Law-Articles-API
 git clone https://github.com/rodrigocqb/Law-Articles-API
 ```
 3. Create .env file based on .env.example
-4. Run the back-end as dev
+4. Run Prisma migrate command which will also populate the database (you can also use the dump SQL file if you want)
+```bash
+npx prisma migrate dev
+```
+5. Run the back-end as dev
 ```bash
 npm run dev
 ```
@@ -42,7 +46,7 @@ or build and run the application
 ```bash
 npm run build && npm start
 ```
-5. Open the jupyter notebook file and run the scripts in order
+6. Open the jupyter notebook file and run the scripts in order
 
 I preferred to use jupyter in order to facilitate visualization but it could have been done with a simple python script
 
