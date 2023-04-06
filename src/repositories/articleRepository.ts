@@ -2,7 +2,11 @@ import { Article } from "@prisma/client";
 import { prisma } from "../config/database";
 
 async function findAllArticles(): Promise<Article[]> {
-  return prisma.article.findMany();
+  return prisma.article.findMany({
+    orderBy: {
+      date: "desc",
+    },
+  });
 }
 
 async function findArticlesByCategory(category: string): Promise<Article[]> {
@@ -26,4 +30,8 @@ async function findArticlesByKeyWord(keyword: string): Promise<Article[]> {
   });
 }
 
-export const articleRepository = { findAllArticles, findArticlesByCategory, findArticlesByKeyWord };
+export const articleRepository = {
+  findAllArticles,
+  findArticlesByCategory,
+  findArticlesByKeyWord,
+};
