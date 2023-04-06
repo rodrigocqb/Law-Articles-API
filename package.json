@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch src/server.ts",
 	"build": "tsc",
 	"start": "node dist/index.ts",
     "test": "jest"
   },
   "keywords": [],
   "author": "",
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "license": "ISC",
    "dependencies": {
     "@prisma/client": "^4.7.1",
