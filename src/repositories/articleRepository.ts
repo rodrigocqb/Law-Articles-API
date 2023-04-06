@@ -26,4 +26,4 @@ async function findArticlesByKeyWord(keyword: string): Promise<Article[]> {
   });
 }
 
-export const articleRepository = { findAllArticles, findArticlesByCategory };
+export const articleRepository = { findAllArticles, findArticlesByCategory, findArticlesByKeyWord };
