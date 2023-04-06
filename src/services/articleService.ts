@@ -11,14 +11,14 @@ async function getArticlesByCategory(category: string): Promise<Article[]> {
   return articleRepository.findArticlesByCategory(category);
 }
 
-async function getArticlesByKeyWord(keyword: string): Promise<Article[]> {
-  if (!keyword) throw "Bad request!";
+async function getArticlesByKeyword(keyword: string): Promise<Article[]> {
+  if (!keyword) throw "Bad Request!";
 
-  return articleRepository.findArticlesByKeyWord(keyword);
+  return articleRepository.findArticlesByKeyword(keyword);
 }
 
 export const articleService = {
   getArticles,
   getArticlesByCategory,
-  getArticlesByKeyWord,
+  getArticlesByKeyword,
 };

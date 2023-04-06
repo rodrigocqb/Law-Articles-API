@@ -17,7 +17,7 @@ async function findArticlesByCategory(category: string): Promise<Article[]> {
   });
 }
 
-async function findArticlesByKeyWord(keyword: string): Promise<Article[]> {
+async function findArticlesByKeyword(keyword: string): Promise<Article[]> {
   return prisma.article.findMany({
     where: {
       OR: [
@@ -33,5 +33,5 @@ async function findArticlesByKeyWord(keyword: string): Promise<Article[]> {
 export const articleRepository = {
   findAllArticles,
   findArticlesByCategory,
-  findArticlesByKeyWord,
+  findArticlesByKeyword,
 };

@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   getArticles,
   getArticlesByCategory,
-  getArticlesByKeyWord,
+  getArticlesByKeyword,
 } from "../controllers/articleController";
 
 const articleRouter = Router();
@@ -10,6 +10,6 @@ const articleRouter = Router();
 articleRouter
   .get("/", getArticles)
   .get("/category/:category", getArticlesByCategory)
-  .get("/search/:keyword", getArticlesByKeyWord);
+  .get("/search/:keyword", getArticlesByKeyword);
 
 export { articleRouter };
