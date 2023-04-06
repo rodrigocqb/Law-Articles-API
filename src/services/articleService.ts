@@ -5,4 +5,8 @@ async function getArticles(): Promise<Article[]> {
   return articleRepository.findAllArticles();
 }
 
-export const articleService = { getArticles };
+async function getArticlesByCategory(category: string): Promise<Article[]> {
+  return articleRepository.findArticlesByCategory(category);
+}
+
+export const articleService = { getArticles, getArticlesByCategory };

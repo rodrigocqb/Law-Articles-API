@@ -1,8 +1,11 @@
 import { Router } from "express";
-import { getArticles } from "../controllers/articleController";
+import {
+  getArticles,
+  getArticlesByCategory,
+} from "../controllers/articleController";
 
 const articleRouter = Router();
 
-articleRouter.get("/", getArticles);
+articleRouter.get("/", getArticles).get("/:category", getArticlesByCategory);
 
 export { articleRouter };
