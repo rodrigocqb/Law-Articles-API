@@ -13,4 +13,17 @@ async function findArticlesByCategory(category: string): Promise<Article[]> {
   });
 }
 
+async function findArticlesByKeyWord(keyword: string): Promise<Article[]> {
+  return prisma.article.findMany({
+    where: {
+      OR: [
+        {
+          title: { contains: keyword },
+        },
+        { content: { search: keyword } },
+      ],
+    },
+  });
+}
+
 export const articleRepository = { findAllArticles, findArticlesByCategory };

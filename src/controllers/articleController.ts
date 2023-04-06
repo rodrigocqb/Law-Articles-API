@@ -26,3 +26,17 @@ export async function getArticlesByCategory(req: Request, res: Response) {
     return res.sendStatus(httpStatus.BAD_REQUEST);
   }
 }
+
+export async function getArticlesByKeyWord(req: Request, res: Response) {
+  const { keyword } = req.params;
+
+  try {
+    const articles: Article[] = await articleService.getArticlesByKeyWord(
+      keyword
+    );
+
+    return res.status(httpStatus.OK).send(articles);
+  } catch (error) {
+    return res.sendStatus(httpStatus.BAD_REQUEST);
+  }
+}
